@@ -1,0 +1,7 @@
+---
+- hosts: dev
+  ansible_become_user: U65989
+  ansible_become_pass: global@123
+  tasks:
+    - name: Ping command  
+      ping:
