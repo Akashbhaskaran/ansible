@@ -1,12 +1,5 @@
 ---
 - hosts: localhost
   tasks:
-  - name: Check whether Java is installed or not
-    command: java -version
-    register: java_result
-  - debug: 
-      msg: "Failed - Java is not installed"
-    when: java_result is failed
-  - debug:
-      msg: "Success - Java is installed"
-    when: java_result is success
+    - name: Ping command  
+      ping:
