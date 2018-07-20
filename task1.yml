@@ -1,8 +1,0 @@
----
-- hosts: dev
-  become: true
-  become_user: U65989
-  become_pass: global@123
-  tasks:
-    - name: Ping command  
-      ping:
