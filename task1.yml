@@ -1,7 +1,12 @@
 ---
-- hosts: dev
-  become: yes
-  become_user: U65989
+- hosts: localhost
   tasks:
-    - name: Ping command  
-      ping:
+  - name: Check whether Java is installed or not
+    command: java -version
+    register: java_result
+  - debug: 
+      msg: "Failed - Java is not installed"
+    when: java_result is failed
+  - debug:
+      msg: "Success - Java is installed"
+    when: java_result is success
